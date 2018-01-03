@@ -24,4 +24,4 @@ RUN apk --update --progress --no-cache --repository http://dl-cdn.alpinelinux.or
 VOLUME ["/app"]
 WORKDIR /app
 
-ENTRYPOINT ["/usr/local/bin/phpstan"]
+ENTRYPOINT ["php", "-d", "memory_limit=-1", "/usr/local/bin/phpstan"]
